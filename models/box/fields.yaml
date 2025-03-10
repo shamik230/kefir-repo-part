@@ -1,0 +1,29 @@
+fields:
+    id:
+        label: Id
+        span: auto
+        type: number
+    type_code:
+        label: 'Type code'
+        span: auto
+        type: text
+    boxable_id:
+        label: 'Boxable id'
+        span: auto
+        type: number
+    boxable_type:
+        label: 'Boxable type'
+        span: auto
+        type: text
+    opened_at:
+        label: 'Opened at'
+        span: auto
+        type: datepicker
+    created_at:
+        label: 'Created at'
+        span: auto
+        type: datepicker
+    updated_at:
+        label: 'Updated at'
+        span: auto
+        type: datepicker

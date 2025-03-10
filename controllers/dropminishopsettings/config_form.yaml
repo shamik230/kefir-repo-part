@@ -1,0 +1,3 @@
+modelClass: Marketplace\Tokens\Models\DropMiniShopSettings
+form: $/marketplace/tokens/models/dropminishopsettings/fields.yaml
+name: Настройки дропа

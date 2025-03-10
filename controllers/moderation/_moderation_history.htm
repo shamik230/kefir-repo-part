@@ -1,0 +1,87 @@
+<div class="form-group">
+    <label>История модерации</label>
+
+    <div class="table-responsive">
+        <table class="moderation-history__table table">
+            <thead class="moderation-history__thead">
+                <tr>
+                    <th>#</th>
+                    <th>Дата</th>
+                    <th>Статус</th>
+                    <th>Модератор</th>
+                    <th>Комментарий</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php $counter = count($model->moderation_history); ?>
+                <?php foreach ($model->moderation_history as $history) : ?>
+                    <?php
+                    $statusClass = '';
+                    switch ($history->moderation_status_id) {
+                        case 1:
+                            $statusClass = 'moderation-history__row--moderating';
+                            break;
+                        case 2:
+                            $statusClass = 'moderation-history__row--denied';
+                            break;
+                        case 3:
+                            $statusClass = 'moderation-history__row--moderated';
+                            break;
+                        case 4:
+                            $statusClass = 'moderation-history__row--deferred';
+                            break;
+                    }
+                    ?>
+                    <tr class="<?= $statusClass ?>">
+                        <td><?= $counter--; ?></td>
+                        <td><?= htmlspecialchars($history->created_at->format('d.m.Y H:i')) ?></td>
+                        <td><?= htmlspecialchars($history->moderation_status->name) ?></td>
+                        <td><?= isset($history->moderator) ? htmlspecialchars($history->moderator->first_name) : '' ?></td>
+                        <td><?= htmlspecialchars($history->comment) ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<style>
+    .table-responsive {
+        width: 100%;
+        height: 200px;
+        overflow-y: auto;
+        margin-bottom: 20px;
+        border: 1px solid #cfd7e1;
+        border-radius: 4px;
+    }
+
+    .moderation-history__table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .moderation-history__thead th {
+        background-color: #f9f9f9;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+
+    .moderation-history__row--moderating {
+        background-color: #eceff1;
+    }
+
+    .moderation-history__row--moderated {
+        background-color: #c8e6c9;
+    }
+
+    .moderation-history__row--denied {
+        background-color: #ffcdd2;
+    }
+
+    .moderation-history__row--deferred {
+        background-color: #eceff1;
+    }
+</style>

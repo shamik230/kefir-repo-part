@@ -1,0 +1,31 @@
+<?php
+
+use Illuminate\Support\Facades\Storage;
+
+$contentPath = trim($value);
+$contentPath = str_replace(' ', '%20', $contentPath);
+
+if (!filter_var($contentPath, FILTER_VALIDATE_URL)) {
+  $contentPath = url(Storage::url($contentPath));
+}
+
+$extension = pathinfo($contentPath, PATHINFO_EXTENSION);
+?>
+
+<?php if (in_array($extension, ['jpg', 'jpeg', 'png', 'webp', 'gif'])): ?>
+  <img class="partial_content_field" src="<?= $contentPath ?>" alt="">
+<?php elseif ($extension === 'mp4'): ?>
+  <video class="partial_content_field" autoplay loop muted>
+    <source src="<?= $contentPath ?>" type="video/mp4">
+  </video>
+<?php endif; ?>
+
+<style>
+  .partial_content_field {
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+    overflow: hidden;
+    display: block;
+  }
+</style>

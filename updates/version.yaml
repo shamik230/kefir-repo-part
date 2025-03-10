@@ -1,0 +1,197 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table marketplace_tokens_tokens'
+    - builder_table_create_marketplace_tokens_tokens.php
+1.0.3:
+    - 'Updated table marketplace_tokens_tokens'
+    - builder_table_update_marketplace_tokens_tokens.php
+1.0.4:
+    - 'Updated table marketplace_tokens_tokens'
+    - builder_table_update_marketplace_tokens_tokens_2.php
+1.0.5:
+    - 'Updated table marketplace_tokens_tokens'
+    - builder_table_update_marketplace_tokens_tokens_3.php
+1.0.6:
+    - 'Updated table marketplace_tokens_tokens'
+    - builder_table_update_marketplace_tokens_tokens_4.php
+1.0.7:
+    - 'Updated table marketplace_tokens_tokens'
+    - builder_table_update_marketplace_tokens_tokens_5.php
+1.0.8:
+    - 'Updated table marketplace_tokens_tokens'
+    - builder_table_update_marketplace_tokens_tokens_6.php
+1.0.9:
+    - 'Updated table marketplace_tokens_tokens'
+    - builder_table_update_marketplace_tokens_tokens_7.php
+1.0.10:
+    - 'Updated table marketplace_tokens_tokens'
+    - builder_table_update_marketplace_tokens_tokens_8.php
+1.0.11:
+    - 'Updated table marketplace_tokens_tokens'
+    - builder_table_update_marketplace_tokens_tokens_9.php
+1.0.12:
+    - 'Updated table marketplace_tokens_tokens'
+    - builder_table_update_marketplace_tokens_tokens_10.php
+1.0.13:
+    - 'Updated table marketplace_tokens_tokens'
+    - builder_table_update_marketplace_tokens_tokens_11.php
+1.0.14:
+    - 'Updated table marketplace_tokens_tokens'
+    - builder_table_update_marketplace_tokens_tokens_12.php
+1.0.15:
+    - 'Updated table marketplace_tokens_tokens'
+    - builder_table_update_marketplace_tokens_tokens_13.php
+1.0.16:
+    - 'Updated table marketplace_tokens_tokens'
+    - builder_table_update_marketplace_tokens_tokens_14.php
+1.0.17:
+    - 'Updated table marketplace_tokens_tokens'
+    - builder_table_update_marketplace_tokens_tokens_15.php
+1.0.18:
+    - 'Updated table marketplace_tokens_tokens'
+    - builder_table_update_marketplace_tokens_tokens_16.php
+1.0.19:
+    - 'Updated table marketplace_tokens_tokens'
+    - builder_table_update_marketplace_tokens_tokens_17.php
+1.0.20:
+    - 'Updated table marketplace_tokens_tokens'
+    - builder_table_update_marketplace_tokens_tokens_18.php
+1.0.21:
+    - 'Updated table marketplace_tokens_tokens'
+    - builder_table_update_marketplace_tokens_tokens_19.php
+1.0.22:
+    - 'Updated table marketplace_tokens_tokens'
+    - builder_table_update_marketplace_tokens_tokens_20.php
+1.0.23:
+    - 'Updated table marketplace_tokens_tokens'
+    - builder_table_update_marketplace_tokens_tokens_21.php
+1.0.24:
+    - 'Updated table marketplace_tokens_tokens'
+    - builder_table_update_marketplace_tokens_tokens_22.php
+1.0.25:
+    - 'Updated table marketplace_tokens_tokens'
+    - builder_table_update_marketplace_tokens_tokens_23.php
+1.0.27:
+    - 'Updated table marketplace_tokens_tokens'
+    - builder_table_update_marketplace_tokens_tokens_25.php
+1.0.30:
+    - 'Updated table marketplace_tokens_tokens'
+    - builder_table_update_marketplace_tokens_tokens_26.php
+1.0.31:
+    - 'Updated table marketplace_tokens_tokens'
+    - builder_table_update_marketplace_tokens_tokens_27.php
+1.0.32:
+    - 'Updated table marketplace_tokens_tokens'
+    - builder_table_update_marketplace_tokens_tokens_28.php
+1.0.34:
+    - 'Remove column is_produced'
+    - builder_table_update_marketplace_tokens_tokens_29.php
+1.0.35:
+    - 'Add `external_id` & `external_address` columns'
+    - AlterTokensTableAddExternalIdAndAddressColumns.php
+1.0.36:
+    - 'Add `transaction_hash` column'
+    - AddTransactionHashColumn.php
+1.0.38:
+    - 'Change`transaction_hash` column (nullable)'
+    - builder_table_update_marketplace_tokens_tokens_30.php
+1.0.39:
+    - 'Set tokens external_id col as string'
+    - AlterTokensTableSetExternalIdAsString.php
+1.0.40:
+    - 'Add export_at column to tokens table'
+    - AddExportAtColumnToTokensTable.php
+1.0.41:
+    - 'Add cashback percent cols in tokens table'
+    - AddCashbackColumns.php
+1.0.42:
+    - 'Recreate token search index'
+    - RecreateTokenFullTextSearchIndex.php
+1.0.43:
+    - 'Create col for searching by name and description'
+    - AddSearchIdxColumnToTokensTable.php
+1.0.44:
+    - 'Rename export_at column to pending_at tokens table'
+    - RenameExportAtColumnToTokensTable.php
+1.0.45:
+    - 'Seed Default DropMiniShopSettings'
+    - SeedDefaultDropMiniShopSettings.php
+1.0.46:
+    - 'Create drop_mini_shop_constrains table'
+    - CreateDropMiniShopTable.php
+1.0.47:
+    - 'Add processing col in drop_mini_shop_constrains table'
+    - AddProcessingColumn.php
+1.0.48:
+    - 'Seed Default RaritypSettings'
+    - SeedDefaultRaritySettings.php
+1.0.49:
+    - 'Replace DropMiniShopSettings with usual model'
+    - CreateDropMiniShopSettingsTable.php
+1.0.50:
+    - AddUniqueConstraintExternalAddressExternalId
+    - AddUniqueConstraintExternalAddressExternalId.php
+1.0.51:
+    - AddOperatorsDropMiniShopSettingsTable
+    - AddOperatorsDropMiniShopSettingsTable.php
+1.0.52:
+    - AddCurrencyColumn
+    - AddCurrencyColumn.php
+1.1.0:
+    - add_barrel_fields_to_tokens_table
+    - add_barrel_fields_to_tokens_table.php
+1.2.0:
+    - create_token_types_table
+    - create_token_types_table.php
+1.2.1:
+    - seed_token_types_table
+    - seed_kefir_barrels.php
+1.2.2:
+    - update_foreign_keys_for_token_type_id
+    - update_foreign_keys_for_token_type_id.php
+1.2.3:
+    - recreate idx_search_tokens
+    - RecreateIndexIdxSearchTokens.php
+1.2.4:
+    - add index external_id and externall_address
+    - AddIndexExternalAdressAndExternalId.php
+1.2.5:
+    - 'Add Indexes to tokens table'
+    - AddIndexesToTokensTable.php
+1.2.7:
+    - 'Add Index deleted_at to tokens table'
+    - AddIndexDeletedAtToTokensTable.php
+1.2.8:
+    - 'Add Column Commission to tokens table'
+    - AddCommissionColumn.php
+1.2.9:
+    - 'Add Column enclosed_sales_end settings dropMiniShopTable'
+    - AddNewColumnsToDropMiniShopSettingsEnclosedSalesDayAndTable
+1.3.0:
+    - add_tokenable_to_tokens_table
+    - add_tokenable_to_tokens_table.php
+1.3.1:
+    - create_box_types_table
+    - create_box_types_table.php
+1.3.2:
+    - seed_box_types
+    - seed_box_types.php
+1.3.3:
+    - create_boxes_table
+    - create_boxes_table.php
+1.3.4:
+    - seed_token_types_box
+    - seed_token_types_box.php
+1.4.0:
+    - seed_token_types_factory
+    - seed_token_types_factory.php
+1.4.1:
+    - add_file_path_to_tokens_table
+    - add_file_path_to_tokens_table.php
+1.4.2:
+    - seed_file_path_tokens_table
+    - seed_file_path_tokens_table.php
+1.5.0:
+    - seed_redirect_link_settings
+    - seed_redirect_link_settings.php

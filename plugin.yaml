@@ -1,0 +1,45 @@
+plugin:
+    name: 'marketplace.tokens::lang.plugin.name'
+    description: 'marketplace.tokens::lang.plugin.description'
+    author: Marketplace
+    icon: icon-certificate
+    homepage: ''
+navigation:
+    main-menu-drop-mini-shop-settings:
+        label: Настройки дропа
+        url: marketplace/tokens/dropminishopsettings/update/1
+        icon: icon-sliders
+        permissions:
+            - developer
+        order: 233
+    main-menu-tokens:
+        label: 'NFT токены'
+        url: marketplace/tokens/token
+        icon: icon-certificate
+        permissions:
+            - developer
+        order: 20
+    main-menu-moderation-tokens:
+        label: 'Модерация токенов'
+        url: marketplace/tokens/moderation
+        icon: icon-certificate
+        permissions:
+            - developer
+        order: 50
+        sideMenu:
+            side-menu-moderation:
+                label: 'На модерации'
+                url: marketplace/tokens/moderation?moderation_status_id=1
+                icon: icon-user-secret
+            side-menu-moderation-deferred:
+                label: 'Модерация отложена'
+                url: marketplace/tokens/moderation?moderation_status_id=4
+                icon: icon-clock-o
+            side-menu-moderation-approved:
+                label: 'Модерация пройдена'
+                url: marketplace/tokens/moderation?moderation_status_id=3
+                icon: icon-check
+            side-menu-moderation-rejected:
+                label: 'Модерация не пройдена'
+                url: marketplace/tokens/moderation?moderation_status_id=2
+                icon: icon-times

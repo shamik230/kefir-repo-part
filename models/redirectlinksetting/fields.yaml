@@ -1,0 +1,9 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    ar_link:
+        label: ar_link
+        type: text
+        span: left

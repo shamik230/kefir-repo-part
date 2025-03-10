@@ -1,0 +1,27 @@
+<?= Form::open() ?>
+
+<div>
+    <div class="modal-header">
+        <h2 class="modal-title">Отклонить токен</h2>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <label>Комментарий модератора</label>
+            <textarea name="Token[comment]" id="Form-Moderation-comment-sync" autocomplete="off" class="form-control field-textarea size-large" placeholder=""><?= $token->comment ?></textarea>
+        </div>
+        <div class="form-group">
+            <label>Причина отказа</label>
+            <select name="Token[reasons_rejection]" class="form-control" required>
+                <?php foreach ($reasonsRejection as $reason) : ?>
+                    <option value="<?= $reason->id ?>" <?= $token->reasons_rejection_id == $reason->id ? 'selected' : '' ?>><?= $reason->name ?></option>
+                <?php endforeach; ?>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" data-request="onReject" class="btn btn-primary">Отклонить</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="popup">Отмена</button>
+    </div>
+</div>
+
+<?= Form::close() ?>

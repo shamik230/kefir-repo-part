@@ -1,0 +1,9 @@
+galleries:
+    label: Галереи
+    view:
+        list: $/marketplace/galleries/models/gallery/columns.yaml
+        toolbarButtons: add|remove
+    manage:
+        form: $/marketplace/galleries/models/gallery/fields.yaml
+        showCheckboxes: true
+        showSearch: true

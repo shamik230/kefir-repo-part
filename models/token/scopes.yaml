@@ -1,0 +1,44 @@
+scopes:
+    author:
+        label: Автор
+        type: group
+        modelClass: RainLab\User\Models\User
+        conditions: author_id in (:filtered)
+        nameFrom: email
+
+    user:
+        label: Владелец
+        type: group
+        modelClass: RainLab\User\Models\User
+        conditions: user_id in (:filtered)
+        nameFrom: email
+
+    collection:
+        label: Коллекция
+        type: group
+        nameFrom: name
+        modelClass: Marketplace\Collections\Models\Collection
+        conditions: collection_id in (:filtered)
+
+    is_booked:
+        label: Забронирован
+        type: checkbox
+        conditions: is_booked = true
+
+    is_sale:
+        label: 'Выставлен на продажу'
+        type: checkbox
+        conditions: is_sale = true
+
+    is_hidden:
+        label: Скрыт
+        type: checkbox
+        conditions: is_hidden = true
+
+    modarated_at:
+        label: Дата модерации
+        type: daterange
+        minDate: '2000-01-01'
+        maxDate: '2100-12-31'
+        yearRange: 10
+        conditions: modarated_at >= ':after' AND modarated_at <= ':before'

@@ -1,0 +1,13 @@
+<?php if ($formModel->tokenable && $formModel->tokenable->boxable): ?>
+
+  <a href="<?= Backend::url('marketplace/tokens/token/update/' . $formModel->tokenable->boxable->id) ?>" target="_blank">
+    <input readonly class="form-control boxable-link" type="text" value="ID: <?= e($formModel->tokenable->boxable->id) ?> Название: <?= e($formModel->tokenable->boxable->name) ?>">
+  </a>
+
+<?php endif; ?>
+
+<style>
+  .boxable-link {
+    cursor: pointer !important;
+  }
+</style>

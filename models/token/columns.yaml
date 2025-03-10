@@ -1,0 +1,67 @@
+columns:
+    preview:
+        label: Превью
+        type: partial
+        path: $/marketplace/tokens/controllers/token/_content_preview.htm
+        sortable: false
+    id:
+        label: ID
+        type: number
+        searchable: true
+        sortable: true
+    name:
+        label: Название
+        type: text
+        searchable: true
+        sortable: true
+        width: 200px
+    author:
+        label: Автор
+        type: text
+        searchable: true
+        sortable: true
+        select: email
+        relation: author
+    collection:
+        label: Коллекция
+        type: text
+        searchable: true
+        sortable: true
+        select: name
+        relation: collection
+    price:
+        label: Цена
+        type: number
+        searchable: false
+        sortable: true
+    created_at:
+        label: 'Дата создания'
+        type: datetime
+        format: d.m.Y H:i
+        sortable: true
+    modarated_at:
+        label: 'Дата модерации'
+        type: datetime
+        format: d.m.Y H:i
+        searchable: true
+        sortable: true
+        invisible: true
+    reasons_rejection:
+        label: 'Причина отказа'
+        type: text
+        select: name
+        relation: reasons_rejection
+    user:
+        label: Владелец
+        type: text
+        searchable: true
+        sortable: true
+        select: email
+        relation: user
+        invisible: true
+    comment:
+        label: Комментарий модератора
+        type: text
+    hidden_comment:
+        label: Скрытый комментарий
+        type: text

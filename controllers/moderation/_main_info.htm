@@ -1,0 +1,283 @@
+<?php
+function stripHtmlTagsAndTrim($str)
+{
+    $strWithoutTags = strip_tags($str);
+    $trimmedStr = trim($strWithoutTags);
+    return $trimmedStr;
+}
+?>
+
+
+<div class="layout-row">
+    <div class="form-group span-left">
+        <label>Название</label>
+        <button type="button" class="btn btn-default btn-xs" onclick="copyData('<?= $model->name ?>', this)">
+            <i class="icon-copy"></i>
+            <i class="icon-check" style="display: none;"></i>
+        </button>
+        <a href="/collection/token/<?= $model->id ?>" target="_blank" class="btn btn-default btn-xs">
+            <i class="icon-external-link"></i>
+        </a>
+        <input type="text" class="form-control <?= !empty($model->name) ? 'filled-input' : '' ?>" value="<?= $model->name ?>" readonly>
+    </div>
+
+    <div class="form-group span-right">
+        <label>Коллекция</label>
+        <button type="button" class="btn btn-default btn-xs" onclick="copyData('<?= $model->collection ? $model->collection->name : '' ?>', this)">
+            <i class="icon-copy"></i>
+            <i class="icon-check" style="display: none;"></i>
+        </button>
+        <a href="/collection/<?= $model->collection->id ?>" target="_blank" class="btn btn-default btn-xs">
+            <i class="icon-external-link"></i>
+        </a>
+        <input type="text" class="form-control <?= !empty($model->collection->name) ? 'filled-input' : '' ?>" value="<?= $model->collection ? $model->collection->name : '' ?>" readonly>
+    </div>
+</div>
+
+<div class="layout-row">
+    <div class="form-group span-left">
+        <label>Описание</label>
+        <button type="button" class="btn btn-default btn-xs" onclick="copyData('<?= stripHtmlTagsAndTrim($model->description) ?>', this)">
+            <i class="icon-copy"></i>
+            <i class="icon-check" style="display: none;"></i>
+        </button>
+        <textarea class="form-control field-textarea size-huge <?= !empty($model->description) ? 'filled-input' : '' ?>" readonly><?= stripHtmlTagsAndTrim($model->description) ?></textarea>
+    </div>
+
+    <div class="form-group span-right">
+        <label>Скрытый контент</label>
+        <button type="button" class="btn btn-default btn-xs" onclick="copyData('<?= stripHtmlTagsAndTrim($model->hidden) ?>', this)">
+            <i class="icon-copy"></i>
+            <i class="icon-check" style="display: none;"></i>
+        </button>
+        <textarea class="form-control field-textarea size-huge <?= !empty($model->hidden) ? 'filled-input' : '' ?>" readonly><?= stripHtmlTagsAndTrim($model->hidden) ?></textarea>
+    </div>
+</div>
+
+<div class="layout-row">
+    <div class="form-group span-left">
+        <div class="layout-row">
+            <div class="form-group span-left">
+                <label>Превью</label>
+                <?php if ($model->preview_upload) : ?>
+                    <a href="<?= $model->preview_upload->getPath() ?>" download class="btn btn-default btn-xs">
+                        <i class="icon-download"></i>
+                    </a>
+                    <div>
+                        <a data-fancybox-preview href="<?= $model->preview_upload->getPath() ?>">
+                            <img src="<?= $model->preview_upload->getPath() ?>" width="100%" height="auto" />
+                        </a>
+                    </div>
+                <?php endif; ?>
+            </div>
+
+
+            <div class="form-group span-right">
+                <label>Файл NFT</label>
+                <a href="<?= $model->upload_file->path ?>" target="_blank" class="btn btn-default btn-xs">
+                    <i class="icon-external-link"></i>
+                </a>
+                <input type="text" value="<?= $model->upload_file->file_name ?>" class="form-control <?= !empty($model->upload_file->name) ? 'filled-input' : '' ?>" readonly />
+            </div>
+
+            <div class="form-group span-right">
+                <div class="form-group">
+                    <label>Дата создания</label>
+                    <button type="button" class="btn btn-default btn-xs" onclick="copyData('<?= date('d.m.Y H:i', strtotime($model->created_at)) ?>', this)">
+                        <i class="icon-copy"></i>
+                        <i class="icon-check" style="display: none;"></i>
+                    </button>
+                    <input type="text" value="<?= date('d.m.Y H:i', strtotime($model->created_at)) ?>" class="form-control filled-input" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label>Email автора</label>
+                    <button type="button" class="btn btn-default btn-xs" onclick="copyData('<?= $model->author->email ?>', this)">
+                        <i class="icon-copy"></i>
+                        <i class="icon-check" style="display: none;"></i>
+                    </button>
+                    <a href="/profile/<?= $model->user->id ?>" target="_blank" class="btn btn-default btn-xs">
+                        <i class="icon-external-link"></i>
+                    </a>
+                    <input type="text" value="<?= $model->author->email ?>" class="form-control <?= !empty($model->author->email) ? 'filled-input' : '' ?>" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label>Никнейм автора</label>
+                    <button type="button" class="btn btn-default btn-xs" onclick="copyData('<?= $model->author->legal->nikname ?>', this)">
+                        <i class="icon-copy"></i>
+                        <i class="icon-check" style="display: none;"></i>
+                    </button>
+                    <input type="text" value="<?= $model->author->legal->nikname ?>" class="form-control <?= !empty($model->author->legal->nikname) ? 'filled-input' : '' ?>" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label>Цена</label>
+                    <button type="button" class="btn btn-default btn-xs" onclick="copyData('<?= $model->price ?>', this)">
+                        <i class="icon-copy"></i>
+                        <i class="icon-check" style="display: none;"></i>
+                    </button>
+                    <input type="text" value="<?= $model->price ?>" class="form-control <?= !empty($model->price) ? 'filled-input' : '' ?>" readonly />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group span-right">
+        <label>Контент, который получает владелец при погашении токена</label>
+        <button type="button" class="btn btn-default btn-xs" onclick="copyData('<?= stripHtmlTagsAndTrim($model->content_on_redemption) ?>', this)">
+            <i class="icon-copy"></i>
+            <i class="icon-check" style="display: none;"></i>
+        </button>
+        <textarea class="form-control field-textarea size-huge <?= !empty($model->content_on_redemption) ? 'filled-input' : '' ?>" readonly><?= stripHtmlTagsAndTrim($model->content_on_redemption) ?></textarea>
+    </div>
+
+    <div class="form-group span-right">
+        <label>Внешняя ссылка</label>
+        <?php if ($model->external_reference) : ?>
+            <button type="button" class="btn btn-default btn-xs" onclick="copyData('<?= $model->external_reference ?>', this)">
+                <i class="icon-copy"></i>
+                <i class="icon-check" style="display: none;"></i>
+            </button>
+            <a href="<?= $model->external_reference ?>" target="_blank" class="btn btn-default btn-xs">
+                <i class="icon-external-link"></i>
+            </a>
+            <input type="text" value="<?= $model->external_reference ?>" class="form-control filled-input" readonly />
+        <?php else : ?>
+            <input type="text" value="" class="form-control readonly-input" readonly />
+        <?php endif; ?>
+    </div>
+
+    <div class="form-group span-right">
+        <label>Причина отклонения</label>
+        <?php if ($model->reasons_rejection) : ?>
+            <button type="button" class="btn btn-default btn-xs" onclick="copyData('<?= $model->reasons_rejection->name ?>', this)">
+                <i class="icon-copy"></i>
+                <i class="icon-check" style="display: none;"></i>
+            </button>
+            <input type="text" value="<?= $model->reasons_rejection->name ?>" class="form-control filled-input" readonly />
+        <?php else : ?>
+            <input type="text" value="" class="form-control readonly-input" readonly />
+        <?php endif; ?>
+
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        Fancybox.bind('[data-fancybox-preview]', {});
+
+        document.addEventListener('keydown', function(event) {
+            if (
+                document.activeElement.tagName === 'TEXTAREA' ||
+                document.activeElement.tagName === 'INPUT'
+            ) {
+                return;
+            }
+
+            <?php if ($model->preview_upload) : ?>
+                if (event.code === 'Minus') {
+                    if (Fancybox.getInstance()) {
+                        Fancybox.close(true);
+                    } else {
+                        Fancybox.show([{
+                            src: '<?= $model->preview_upload->getPath() ?>',
+                            type: 'image',
+                        }, ]);
+                    }
+                }
+            <?php endif; ?>
+
+        });
+    });
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        Fancybox.bind('[data-fancybox-bg]', {});
+
+        document.addEventListener('keydown', function(event) {
+            if (
+                document.activeElement.tagName === 'TEXTAREA' ||
+                document.activeElement.tagName === 'INPUT'
+            ) {
+                return;
+            }
+
+            <?php if ($model->upload_file) : ?>
+
+                if (event.code === 'KeyP') {
+                    if (Fancybox.getInstance()) {
+                        Fancybox.close(true);
+                    } else {
+                        Fancybox.show([{
+                            src: '<?= $model->upload_file->path ?>',
+                            type: 'image',
+                        }, ]);
+                    }
+                }
+            <?php endif; ?>
+
+        });
+    });
+
+
+    function copyData(text, buttonElement) {
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(text).then(() => {
+
+                // Найти иконки внутри кнопки
+                const copyIcon = buttonElement.querySelector('.icon-copy');
+                const checkIcon = buttonElement.querySelector('.icon-check');
+
+                // Скрыть иконку копирования и показать иконку галочки
+                copyIcon.style.display = 'none';
+                checkIcon.style.display = 'inline';
+
+                // Вернуть исходную иконку через 2 секунды
+                setTimeout(() => {
+                    copyIcon.style.display = 'inline';
+                    checkIcon.style.display = 'none';
+                }, 2000);
+            }).catch(err => {
+                console.error('Ошибка при копировании: ', err);
+                buttonElement.innerText = 'Не удалось скопировать';
+                setTimeout(() => {
+                    buttonElement.innerText = originalText;
+                }, 2000);
+            });
+        } else {
+            // Old browsers
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+
+                const originalText = buttonElement.innerText;
+                buttonElement.innerText = 'Скопировано';
+                setTimeout(() => {
+                    buttonElement.innerText = originalText;
+                }, 2000);
+            } catch (err) {
+                console.error('Не удалось скопировать: ', err);
+                buttonElement.innerText = 'Не удалось скопировать';
+                setTimeout(() => {
+                    buttonElement.innerText = originalText;
+                }, 2000);
+            }
+            document.body.removeChild(textArea);
+        }
+    }
+</script>
+
+<style>
+    .form-control.filled-input {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+    }
+</style>

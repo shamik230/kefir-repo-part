@@ -1,0 +1,60 @@
+<?php
+
+use Illuminate\Support\Facades\Storage;
+
+$preview = $model->preview;
+$file = $model->file_path;
+
+$getContentUrl = function ($contentPath) {
+  $contentPath = trim($contentPath);
+  $contentPath = str_replace(' ', '%20', $contentPath);
+
+  if (!filter_var($contentPath, FILTER_VALIDATE_URL)) {
+    $contentPath = url(Storage::url($contentPath));
+  }
+
+  return $contentPath;
+};
+
+$previewUrl = $getContentUrl($preview);
+$fileUrl = $getContentUrl($file);
+
+$previewExtension = pathinfo($previewUrl, PATHINFO_EXTENSION);
+$fileExtension = pathinfo($fileUrl, PATHINFO_EXTENSION);
+?>
+
+<div class="layoyt-row">
+  <div class="form-group span-left">
+    <label>Preview</label>
+
+    <?php if (in_array($previewExtension, ['jpg', 'jpeg', 'png', 'webp', 'gif'])): ?>
+      <img class="partial_content_field" src="<?= $previewUrl ?>" alt="Preview">
+    <?php elseif ($previewExtension === 'mp4'): ?>
+      <video class="partial_content_field" autoplay loop muted>
+        <source src="<?= $previewUrl ?>" type="video/mp4">
+      </video>
+    <?php endif; ?>
+  </div>
+
+  <div class="form-group span-right">
+    <label>File</label>
+
+    <?php if (in_array($fileExtension, ['jpg', 'jpeg', 'png', 'webp', 'gif'])): ?>
+      <img class="partial_content_field" src="<?= $fileUrl ?>" alt="File">
+    <?php elseif ($fileExtension === 'mp4'): ?>
+      <video class="partial_content_field" autoplay loop muted>
+        <source src="<?= $fileUrl ?>" type="video/mp4">
+      </video>
+    <?php endif; ?>
+  </div>
+</div>
+
+<style>
+  .partial_content_field {
+
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    display: block;
+  }
+</style>

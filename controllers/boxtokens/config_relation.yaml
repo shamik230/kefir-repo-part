@@ -1,0 +1,8 @@
+boxable:
+    label: 'Boxable Token'
+    view:
+        form: $/marketplace/tokens/models/token/fields.yaml
+        toolbarButtons: link|unlink
+    manage:
+        form: $/marketplace/tokens/models/token/fields.yaml
+        toolbarButtons: add|delete

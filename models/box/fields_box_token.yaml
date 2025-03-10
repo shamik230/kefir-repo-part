@@ -1,0 +1,98 @@
+fields:
+    name:
+        label: Название
+        span: left
+        required: 1
+        readOnly: true
+        type: text
+    user:
+        label: Владелец
+        nameFrom: email
+        descriptionFrom: description
+        span: left
+        required: 1
+        type: relation
+    author:
+        label: Автор
+        nameFrom: email
+        descriptionFrom: description
+        span: left
+        readOnly: true
+        type: relation
+    price:
+        label: Цена
+        span: left
+        type: text
+    collection:
+        label: Коллекция
+        nameFrom: name
+        descriptionFrom: description
+        span: left
+        type: relation
+    tokenable[type_code]:
+        label: box_type
+        span: left
+        type: text
+        readOnly: true
+    tokenable[boxable]:
+        label: 'Что выпало из бокса (Boxable)'
+        span: left
+        type: partial
+        path: boxable_link_name
+    description:
+        label: Описание
+        size: huge
+        span: left
+        required: 1
+        type: richeditor
+
+    is_hidden:
+        label: Скрыт
+        span: left
+        default: 0
+        type: switch
+    is_sale:
+        label: 'Выставлен на продажу'
+        span: left
+        default: 1
+        type: switch
+    is_booked:
+        label: Забронирован
+        span: left
+        type: switch
+
+    upload_file:
+        label: Файл
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+        span: left
+        type: fileupload
+    preview_upload:
+        label: Превью
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+        span: left
+        type: fileupload
+
+    modarated_at:
+        label: modarated_at
+        mode: datetime
+        span: left
+        disabled: 1
+        type: datepicker
+    created_at:
+        label: created_at
+        span: left
+        disabled: 1
+        readOnly: 0
+        type: text
+    deleted_at:
+        label: deleted_at
+        span: left
+        disabled: 1
+        readOnly: 0
+        type: text

@@ -1,0 +1,39 @@
+columns:
+    id:
+        label: box_id
+        type: number
+    type_code:
+        label: type_code
+        type: text
+
+    token_id:
+        label: token_id
+        type: text
+        relation: token
+        valueFrom: id
+    user_id:
+        label: user_id
+        type: text
+        relation: token
+        valueFrom: user.email
+    boxable_id:
+        label: boxable_id
+        type: text
+    boxable_type:
+        label: boxable_type
+        type: text
+        invisible: true
+
+    opened_at:
+        label: opened_at
+        type: datetime
+        format: d.m.Y H:i
+    created_at:
+        label: created_at
+        type: datetime
+        format: d.m.Y H:i
+    updated_at:
+        label: updated_at
+        type: datetime
+        format: d.m.Y H:i
+        invisible: true

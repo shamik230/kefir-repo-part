@@ -1,0 +1,85 @@
+tabs:
+    fields:
+        main_info:
+            label: null
+            type: partial
+            span: full
+            tab: Основное
+        hidden_comment:
+            label: null
+            type: partial
+            span: left
+            tab: Основное
+        moderation_history:
+            label: null
+            type: partial
+            span: right
+            tab: Основное
+        preview_upload:
+            label: 'Загрузка превью'
+            mode: image
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: auto
+            disabled: 1
+            type: fileupload
+            comment: 'Если нфт файл НЕ КАРТИНКА, нужно загрузить превью для него'
+            tab: Прочее
+        created_at:
+            label: 'Дата создания'
+            span: auto
+            disabled: 1
+            readOnly: 0
+            type: text
+            tab: Прочее
+        file:
+            label: 'Ссылка на файл'
+            span: right
+            disabled: 1
+            type: text
+            tab: Прочее
+        user:
+            label: Владелец
+            nameFrom: email
+            descriptionFrom: description
+            span: right
+            readOnly: 1
+            required: 1
+            type: relation
+            tab: Прочее
+        original_file:
+            label: 'Сcылка на оригинальный файл в IPFS'
+            span: right
+            disabled: 1
+            type: text
+            tab: Прочее
+        is_hidden:
+            label: Скрыт
+            span: left
+            default: 0
+            type: switch
+            comment: 'Скрытие токена, токен будет видеть только владелец'
+            disabled: 1
+            tab: Прочее
+        is_sale:
+            label: 'Выставлен на продажу'
+            span: left
+            default: 1
+            type: switch
+            disabled: 1
+            tab: Прочее
+        is_booked:
+            label: Забронирован
+            span: left
+            type: switch
+            disabled: 1
+            tab: Прочее
+secondaryTabs:
+    fields:
+        moderation_buttons:
+            label: null
+            type: partial
+            span: full
+            tab: Модерация

@@ -1,0 +1,36 @@
+<?php
+/**
+ * @var int $views
+ * @var int $registrations
+ * @var float $weekly_kefirium
+ * @var float $monthly_kefirium
+ * @var float $all_kefirium
+ */
+?>
+<div class="report-widget">
+    <h3>Реферальная статистика</h3>
+    <div
+        class="control-chart wrap-legend"
+        data-control="chart-bar"
+        data-height="100"
+        data-full-width="6">
+        <ul>
+            <li>Кефира за неделю<span><?= $weekly_kefirium ?></span></li>
+            <li>Кефира за месяц<span><?= $monthly_kefirium ?></span></li>
+            <li>Кефира всего<span><?= $all_kefirium ?></span></li>
+        </ul>
+    </div>
+    <div style="clear: both"></div>
+    <div class="control-status-list" style="margin-top: 1rem;">
+        <ul>
+            <li>
+                <span class="status-text">Просмотров:</span>
+                <span class="status-label primary"><?= $views ?></span>
+            </li>
+            <li>
+                <span class="status-text">Регистраций:</span>
+                <span class="status-label primary"><?= $registrations ?></span>
+            </li>
+        </ul>
+    </div>
+</div>

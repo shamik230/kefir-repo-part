@@ -1,0 +1,13 @@
+<div class="form-group">
+    <label>Скрытый комментарий</label>
+    <textarea name="Token[hidden_comment]" class="form-control field-textarea size-large"><?= $model->hidden_comment ?></textarea>
+</div>
+
+<div class="form-buttons">
+    <div class="loading-indicator-container">
+
+        <button type="button" data-request="onSaveHiddenComment" data-load-indicator="<?= e(trans('backend::lang.form.saving')) ?>" class="btn btn-sm btn-primary">
+            Сохранить комментарий
+        </button>
+    </div>
+</div>

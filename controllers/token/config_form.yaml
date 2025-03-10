@@ -1,0 +1,10 @@
+name: Token
+form: $/marketplace/tokens/models/token/fields.yaml
+modelClass: Marketplace\Tokens\Models\Token
+defaultRedirect: marketplace/tokens/token
+create:
+    redirect: 'marketplace/tokens/token/update/:id'
+    redirectClose: marketplace/tokens/token
+update:
+    redirect: marketplace/tokens/token
+    redirectClose: marketplace/tokens/token

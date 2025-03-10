@@ -1,0 +1,10 @@
+name: Moderation
+form: $/marketplace/tokens/models/token/moderation_fields.yaml
+modelClass: Marketplace\Tokens\Models\Token
+defaultRedirect: marketplace/tokens/moderation
+create:
+    redirect: 'marketplace/tokens/moderation/update/:id'
+    redirectClose: marketplace/tokens/moderation
+update:
+    redirect: marketplace/tokens/moderation
+    redirectClose: marketplace/tokens/moderation

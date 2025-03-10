@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Box Token
+
+# Model Form Field configuration
+form: $/marketplace/tokens/models/box/fields_box_token.yaml
+
+# Model Class name
+modelClass: Marketplace\Tokens\Models\Token
+
+# Default redirect location
+defaultRedirect: marketplace/tokens/boxtokens
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: marketplace/tokens/boxtokens/update/:id
+    redirectClose: marketplace/tokens/boxtokens
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: marketplace/tokens/boxtokens
+    redirectClose: marketplace/tokens/boxtokens
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title

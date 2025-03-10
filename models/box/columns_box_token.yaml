@@ -1,0 +1,79 @@
+columns:
+    preview:
+        label: Превью
+        type: image
+        sortable: false
+        width: 80px
+        height: 80px
+        options:
+            quality: 100
+            mode: crop
+    id:
+        label: ID
+        type: number
+        searchable: true
+        sortable: true
+        clickable: false
+    name:
+        label: Название
+        type: text
+        searchable: true
+        sortable: true
+        width: 200px
+        invisible: true
+    collection:
+        label: Коллекция
+        type: text
+        searchable: true
+        sortable: true
+        select: name
+        relation: collection
+        invisible: true
+    price:
+        label: Цена
+        type: number
+        searchable: false
+        sortable: true
+    user:
+        label: Владелец
+        type: text
+        searchable: true
+        sortable: true
+        select: email
+        relation: user
+    created_at:
+        label: created_at
+        type: datetime
+        format: d.m.Y H:i
+        sortable: true
+
+    box_id:
+        label: box_id
+        type: text
+        relation: tokenable
+        valueFrom: id
+    opened_at:
+        label: opened_at
+        type: datetime
+        relation: tokenable
+        valueFrom: opened_at
+        format: d.m.Y H:i
+    box_type:
+        label: box_type
+        type: text
+        relation: tokenable
+        valueFrom: type_code
+
+    tokenable[boxable][id]:
+        label: 'Boxable ID'
+        type: text
+    tokenable[boxable][name]:
+        label: 'Boxable Name'
+        type: text
+
+    deleted_at:
+        label: deleted_at
+        type: datetime
+        format: d.m.Y H:i
+        sortable: true
+        invisible: true

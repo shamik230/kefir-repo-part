@@ -1,0 +1,164 @@
+fields:
+    name:
+        label: Название
+        span: auto
+        required: 1
+        type: text
+    modarated_at:
+        label: 'Дата модерации'
+        mode: datetime
+        span: right
+        disabled: 1
+        type: datepicker
+    user:
+        label: Владелец
+        nameFrom: email
+        descriptionFrom: description
+        span: auto
+        readOnly: 0
+        required: 1
+        type: relation
+    created_at:
+        label: 'Дата создания'
+        span: right
+        disabled: 1
+        readOnly: 0
+        type: text
+    author:
+        label: Автор
+        nameFrom: email
+        descriptionFrom: description
+        span: left
+        readOnly: 0
+        required: 1
+        type: relation
+    buyer_percent:
+        label: 'Процент кешбека покупателя'
+        type: number
+        min: 0
+        step: 0.1
+        span: right
+    file:
+        label: 'Ссылка на файл'
+        span: left
+        type: text
+    seller_percent:
+        label: 'Процент кешбека продавца'
+        type: number
+        min: 0
+        step: 0.1
+        span: right
+    price:
+        label: Цена
+        span: left
+        disabled: 0
+        readOnly: 0
+        required: 1
+        type: text
+    is_default_percents:
+        label: 'Использовать проценты по умолчанию'
+        type: switch
+        span: right
+    royalty:
+        label: Роялти
+        span: left
+        type: text
+    collection:
+        label: Коллекция
+        nameFrom: name
+        descriptionFrom: description
+        span: left
+        type: relation
+    external_reference:
+        label: 'Внешняя ссылка'
+        span: left
+        type: text
+        comment: 'Ссылка на внешний ресурс с описанием вашего нфт'
+    description:
+        label: Описание
+        size: huge
+        span: left
+        required: 1
+        type: richeditor
+    hidden:
+        label: 'Скрытый контент'
+        size: huge
+        span: left
+        type: richeditor
+        comment: 'Контент, который будет виден только владельцу'
+    content_on_redemption:
+        label: 'Контент, который получает владелец при погашении токена'
+        size: huge
+        span: left
+        type: textarea
+        comment: 'Контент, который получает владелец при погашении токена'
+    is_hidden:
+        label: Скрыт
+        span: left
+        default: 0
+        type: switch
+        comment: 'Скрытие токена, токен будет видеть только владелец'
+    is_utilitarian:
+        label: 'Утилитарный токенов'
+        span: left
+        default: 0
+        type: switch
+    upload_file:
+        label: 'Загрузите файл'
+        mode: file
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: left
+        type: fileupload
+        comment: 'Загрузите файл нфт'
+    is_sale:
+        label: 'Выставлен на продажу'
+        span: left
+        default: 1
+        type: switch
+    preview_upload:
+        label: Превью
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: left
+        type: fileupload
+        comment: 'Если нфт файл НЕ КАРТИНКА, нужно загрузить превью для него'
+    is_booked:
+        label: Забронирован
+        span: left
+        type: switch
+    secret_key:
+        label: 'Проверочный пароль'
+        span: left
+        disabled: 1
+        type: text
+    moderation_status:
+        label: 'Статус модерации'
+        nameFrom: name
+        descriptionFrom: description
+        span: left
+        disabled: 1
+        type: relation
+    reasons_rejection:
+        label: 'Причина отказа'
+        nameFrom: name
+        descriptionFrom: description
+        span: left
+        type: relation
+        disabled: 1
+        placeholder: 'Выберите причину отказа'
+    hidden_comment:
+        label: 'Скрытый комментарий'
+        size: huge
+        span: left
+        type: textarea
+    comment:
+        label: 'Комментарий модератора'
+        size: huge
+        span: left
+        type: textarea

@@ -1,0 +1,70 @@
+<div class="form-buttons">
+    <div class="loading-indicator-container">
+        <button type="button" data-request="onApprove" data-load-indicator="<?= e(trans('backend::lang.form.saving')) ?>" class="btn btn-default btn-approve">
+            Утвердить (Y)
+        </button>
+
+        <button type="button" class="btn btn-default btn-reject" data-control="popup" data-handler="onShowRejectModal">
+            Отклонить (N)
+        </button>
+
+        <button type="button" data-request="onDefer" data-load-indicator="<?= e(trans('backend::lang.form.saving')) ?>" class="btn btn-default btn-defer">
+            Отложить (J)
+        </button>
+    </div>
+</div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('keydown', function(event) {
+            if (
+                document.activeElement.tagName === 'TEXTAREA' ||
+                document.activeElement.tagName === 'INPUT'
+            ) {
+                return;
+            }
+
+            switch (event.code) {
+                case 'KeyY':
+                    document.querySelector('.btn-approve').click();
+                    break;
+                case 'KeyN':
+                    document.querySelector('.btn-reject').click();
+                    break;
+                case 'KeyJ':
+                    document.querySelector('.btn-defer').click();
+                    break;
+            }
+        });
+    });
+</script>
+
+<style>
+    .btn-approve {
+        background-color: #66bb6a;
+    }
+
+    .btn-approve:hover,
+    .btn-approve:focus {
+        background-color: #43a047;
+    }
+
+    .btn-reject {
+        background-color: #ef5350;
+    }
+
+    .btn-reject:hover,
+    .btn-reject:focus {
+        background-color: #e53935;
+    }
+
+    .btn-defer {
+        background-color: #78909c;
+    }
+
+    .btn-defer:hover,
+    .btn-defer:focus {
+        background-color: #546e7a;
+    }
+</style>

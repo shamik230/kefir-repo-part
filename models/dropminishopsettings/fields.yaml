@@ -1,0 +1,378 @@
+textClaim: &claim Количество вырабатываемых литров в сутки при аренде
+textPult: &pult Стоимость пульта
+textOperator: &operator Стоимость оператора
+textIncomplete: &incomplete Количество вырабатываемых литров в сутки при неполном цехе
+textFull: &full Количество вырабатываемых литров в сутки при полном цехе
+
+tabs:
+    fields:
+        settings[free_drop_is_active]:
+            label: Состояние
+            type: switch
+            span: left
+            tab: Бесплатные раздачи
+        settings[free_drop_type]:
+            label: Тип
+            type: dropdown
+            span: left
+            options:
+                kefirius_owner: "Для владельцев NFT 'Крипто кефириус'"
+                active_vk: "Спец активность ВК"
+                active_tg: "Спец активность ТГ"
+                off: "Отключено"
+            tab: Бесплатные раздачи
+
+        settings[enclosed_sales_is_active]:
+            label: Состояние
+            type: switch
+            span: left
+            tab: Закрытая распродажа
+
+        settings[enclosed_sales_date]:
+            label: Дата начала
+            type: datepicker
+            mode: datetime
+            span: left
+            tab: Закрытая распродажа
+
+        settings[enclosed_sales_date_end]:
+            label: Дата конца
+            type: datepicker
+            mode: datetime
+            span: right
+            tab: Закрытая распродажа
+
+        settings[enclosed_sales_price_one_token]:
+            label: Цена за 1 токен
+            type: number
+            span: left
+            tab: Закрытая распродажа
+
+        #        settings[enclosed_sales_start]:
+        #            label: Время начала
+        #            type: datepicker
+        #            mode: time
+        #            span: left
+        #            tab: Закрытая распродажа
+
+        settings[enclosed_sales_price_three_token]:
+            label: Цена за 3 токена
+            type: number
+            span: right
+            tab: Закрытая распродажа
+
+        #        settings[enclosed_sales_completion]:
+        #            label: Время завершения
+        #            type: datepicker
+        #            mode: time
+        #            span: left
+        #            tab: Закрытая распродажа
+
+        settings[open_sales_is_active]:
+            label: Состояние
+            type: switch
+            span: left
+            tab: Открытая распродажа
+
+        settings[open_sales_date_start]:
+            label: Дата начала
+            type: datepicker
+            mode: date
+            span: left
+            tab: Открытая распродажа
+
+        settings[open_sales_price_token_rur]:
+            label: Цена за токен в рублях
+            comment: Автоматически будет повышаться после покупок за рубли
+            type: number
+            span: left
+            tab: Открытая распродажа
+
+        settings[open_sales_price_token_kefir]:
+            label: Цена за токен в кефире
+            comment: Автоматически будет повышаться после покупок за кефир
+            type: number
+            span: right
+            tab: Открытая распродажа
+
+        settings[open_sales_price_rur_increase]:
+            label: Увеличение цены за рубли после покупки
+            type: number
+            span: left
+            tab: Открытая распродажа
+
+        settings[open_sales_price_kefir_increase]:
+            label: Увеличение цены за кефир после покупки
+            type: number
+            span: right
+            tab: Открытая распродажа
+
+        settings[mini_rarity_claim]:
+            label: *claim
+            comment: МИНИ
+            type: number
+            min: 0
+            step: 0.1
+            span: left
+            tab: Производительность
+
+        settings[mini_rarity_incomplete]:
+            label: *incomplete
+            comment: МИНИ
+            type: number
+            min: 0
+            step: 0.1
+            span: right
+            tab: Производительность
+
+        settings[mini_rarity_full]:
+            label: *full
+            comment: МИНИ
+            type: number
+            min: 0
+            step: 0.1
+            span: left
+            tab: Производительность
+
+        settings[mini_rarity_price_pult]:
+            label: *pult
+            comment: МИНИ
+            type: number
+            min: 0
+            step: 0.1
+            span: right
+            tab: Производительность
+
+        settings[mini_rarity_price_operator]:
+            label: *operator
+            comment: МИНИ
+            type: number
+            min: 0
+            step: 0.1
+            span: left
+            tab: Производительность
+
+        settings[usual_rarity_claim]:
+            label: *claim
+            comment: ОБЫЧНЫЙ
+            type: number
+            min: 0
+            step: 0.1
+            span: right
+            tab: Производительность
+
+        settings[usual_rarity_incomplete]:
+            label: *incomplete
+            comment: ОБЫЧНЫЙ
+            type: number
+            min: 0
+            step: 0.1
+            span: left
+            tab: Производительность
+
+        settings[usual_rarity_full]:
+            label: *full
+            comment: ОБЫЧНЫЙ
+            type: number
+            min: 0
+            step: 0.1
+            span: right
+            tab: Производительность
+
+        settings[usual_rarity_price_pult]:
+            label: *pult
+            comment: ОБЫЧНЫЙ
+            type: number
+            min: 0
+            step: 0.1
+            span: left
+            tab: Производительность
+
+        settings[usual_rarity_price_operator]:
+            label: *operator
+            comment: ОБЫЧНЫЙ
+            type: number
+            min: 0
+            step: 0.1
+            span: right
+            tab: Производительность
+
+        settings[unusual_rarity_claim]:
+            label: *claim
+            comment: НЕОБЫЧНЫЙ
+            type: number
+            min: 0
+            step: 0.1
+            span: left
+            tab: Производительность
+
+        settings[unusual_rarity_incomplete]:
+            label: *incomplete
+            comment: НЕОБЫЧНЫЙ
+            type: number
+            min: 0
+            step: 0.1
+            span: right
+            tab: Производительность
+
+        settings[unusual_rarity_full]:
+            label: *full
+            comment: НЕОБЫЧНЫЙ
+            type: number
+            min: 0
+            step: 0.1
+            span: left
+            tab: Производительность
+
+        settings[unusual_rarity_price_pult]:
+            label: *pult
+            comment: НЕОБЫЧНЫЙ
+            type: number
+            min: 0
+            step: 0.1
+            span: right
+            tab: Производительность
+
+        settings[unusual_rarity_price_operator]:
+            label: *operator
+            comment: НЕОБЫЧНЫЙ
+            type: number
+            min: 0
+            step: 0.1
+            span: left
+            tab: Производительность
+
+        settings[rare_rarity_claim]:
+            label: *claim
+            comment: РЕДКИЙ
+            type: number
+            min: 0
+            step: 0.1
+            span: right
+            tab: Производительность
+
+        settings[rare_rarity_incomplete]:
+            label: *incomplete
+            comment: РЕДКИЙ
+            type: number
+            min: 0
+            step: 0.1
+            span: left
+            tab: Производительность
+
+        settings[rare_rarity_full]:
+            label: *full
+            comment: РЕДКИЙ
+            type: number
+            min: 0
+            step: 0.1
+            span: right
+            tab: Производительность
+
+        settings[rare_rarity_price_pult]:
+            label: *pult
+            comment: РЕДКИЙ
+            type: number
+            min: 0
+            step: 0.1
+            span: left
+            tab: Производительность
+
+        settings[rare_rarity_price_operator]:
+            label: *operator
+            comment: РЕДКИЙ
+            type: number
+            min: 0
+            step: 0.1
+            span: right
+            tab: Производительность
+
+        settings[epic_rarity_claim]:
+            label: *claim
+            comment: ЭПИЧНЫЙ
+            type: number
+            min: 0
+            step: 0.1
+            span: left
+            tab: Производительность
+
+        settings[epic_rarity_incomplete]:
+            label: *incomplete
+            comment: ЭПИЧНЫЙ
+            type: number
+            min: 0
+            step: 0.1
+            span: right
+            tab: Производительность
+
+        settings[epic_rarity_full]:
+            label: *full
+            comment: ЭПИЧНЫЙ
+            type: number
+            min: 0
+            step: 0.1
+            span: left
+            tab: Производительность
+
+        settings[epic_rarity_price_pult]:
+            label: *pult
+            comment: ЭПИЧНЫЙ
+            type: number
+            min: 0
+            step: 0.1
+            span: right
+            tab: Производительность
+
+        settings[epic_rarity_price_operator]:
+            label: *operator
+            comment: ЭПИЧНЫЙ
+            type: number
+            min: 0
+            step: 0.1
+            span: left
+            tab: Производительность
+
+        settings[legend_rarity_claim]:
+            label: *claim
+            comment: ЛЕГЕНДА
+            type: number
+            min: 0
+            step: 0.1
+            span: right
+            tab: Производительность
+
+        settings[legend_rarity_incomplete]:
+            label: *incomplete
+            comment: ЛЕГЕНДА
+            type: number
+            min: 0
+            step: 0.1
+            span: left
+            tab: Производительность
+
+        settings[legend_rarity_full]:
+            label: *full
+            comment: ЛЕГЕНДА
+            type: number
+            min: 0
+            step: 0.1
+            span: right
+            tab: Производительность
+
+        settings[legend_rarity_price_pult]:
+            label: *pult
+            comment: ЛЕГЕНДА
+            type: number
+            min: 0
+            step: 0.1
+            span: left
+            tab: Производительность
+
+        settings[legend_rarity_price_operator]:
+            label: *operator
+            comment: ЛЕГЕНДА
+            type: number
+            min: 0
+            step: 0.1
+            span: right
+            tab: Производительность

@@ -1,0 +1,13 @@
+# ===================================
+#  Import/Export Behavior Config
+# ===================================
+
+# import:
+#     title: Import subscribers
+#     modelClass: Marketplace\Tokens\Models\SubscriberImport
+#     list: $/marketplace/tokens/models/token/columns.yaml
+
+export:
+    title: Export tokens
+    modelClass: Marketplace\Tokens\Models\TokenExport
+    list: $/marketplace/tokens/models/token/columsexport.yaml
